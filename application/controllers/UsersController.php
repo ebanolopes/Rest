@@ -189,6 +189,7 @@ class UsersController extends Zend_Rest_Controller
 		$requestData = $this->getRequestData();
 		
 		try {
+			/* TODO: Check with staff what kind of validation must be done here */
 			if (empty($requestData->id)) throw new Exception("msg_error_entry_id_must_be_provided");
 			
 			$response->affectedRows = $this->getModel()->delete(array("id = ?" => $requestData->id));
